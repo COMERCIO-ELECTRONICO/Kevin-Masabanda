@@ -23,7 +23,7 @@ var json = {
   //FILTRO NUMEROS PARES
   var SEGUNDO1 = json.arreglos.primero
   .filter((item, valor, arreglos) => {
-    return item===2|item=== 4|item===6|item===8|item===10 
+    return item===2|item=== 4|item===6|item===8|item===10 //Es para filtrar los números pares en el arreglo
   });
   console.log("PARES")
   console.log(SEGUNDO1)
