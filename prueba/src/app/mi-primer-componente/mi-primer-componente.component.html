@@ -1,5 +1,11 @@
-<p>mi-primer-componente works!</p>
-<h1>KEVIN MASABANDA</h1>
+<h1>
+    KEVIN MASABANDA
+    {{datos.tituloPadre}}
+</h1>
 <button (click)="SALUDAR()">
-    BOTON ALERTA 
+    {{datos.nombreBotonPadre}}
 </button>
+ 
+<img 
+[src]="datos.imagenPadre" 
+alt="">
