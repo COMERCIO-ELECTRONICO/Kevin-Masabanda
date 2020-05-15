@@ -15,11 +15,21 @@ export class MiPrimerComponenteComponent implements OnInit {
 
   @Output() saludoHijo = new EventEmitter();
   
-  
+  fecha = new Date();
+  sueldo: number = 3.1416;
+  nombre: string = 'kevin';
+
+
+
   
   constructor() { }
 
   ngOnInit(): void {
+    console.log('datos del padre en hijo')
+    console.log(this.datos)
+  }
+  ngOnDestroy(){
+    
   }
 
 SALUDAR(){

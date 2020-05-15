@@ -1,11 +1,22 @@
 <h1>
-    KEVIN MASABANDA
+    KEVIN JIMENEZ
     {{datos.tituloPadre}}
 </h1>
-<button (click)="SALUDAR()">
-    {{datos.nombreBotonPadre}}
-</button>
- 
-<img 
-[src]="datos.imagenPadre" 
-alt="">
+
+<h1>
+    PIPES
+</h1>
+<p>
+    objeto (JSON)
+</p>
+{{datos | json}}
+
+<p>
+    fecha
+</p>
+{{fecha | date: 'yy MM dd'}}
+<p>
+    currency
+</p>
+{{sueldo | currency}}
+{{nombre | uppercase}}
