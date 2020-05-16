@@ -14,7 +14,7 @@ export class HijoComponent implements OnInit {
   ngOnInit(): void {
   }
   edadCalcular(){
-    this.edad=2020-this.vanio;
+    this.edad=2020-this.vanio; //hara el calculo acorde al año actual
     this.padre.edad=this.edad;
   }
 }
