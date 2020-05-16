@@ -9,7 +9,8 @@ export class PadreComponent implements OnInit {
 
   constructor() { }
   valorDelInput = '';
-  ngOnInit(): void {
+
+  ngOnInit() {
   }
 
 }
