@@ -1,25 +1,19 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+<h1>Componente padre</h1>
+<div class="row formulario">
+  <div class="col-sm-3"></div>
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label for="">Ingrese el año</label>
+      <input type="text" class="form-control"
+      [(ngModel)]="iAnio">
+      {{iAnio}}<br>
+      <label for="">Edad</label>
+      <output type="text" value="{{edad}}" class="form-control"></output>
+      <app-hijo
+      [vanio]="iAnio">
+      </app-hijo>
+    </div>
+  </div>
+</div>
 
-import { PadreComponent } from './padre.component';
 
-describe('PadreComponent', () => {
-  let component: PadreComponent;
-  let fixture: ComponentFixture<PadreComponent>;
-
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ PadreComponent ]
-    })
-    .compileComponents();
-  }));
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(PadreComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
