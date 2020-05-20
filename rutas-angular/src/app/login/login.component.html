@@ -256,9 +256,42 @@
 
 <!--/////////////////////////////////////////////////////////////////////////////-->
 <h4>VERIFICACION DE CLAVE</h4>
-
-
-
+<div class="form-group">
+  <input
+  type="password"
+  class="form-control"
+  id="clave"
+  [(ngModel)]="contrasenaConf"
+    name="contrasenaConf"
+    placeholder="****"
+    minlength="4"
+    maxlength="4"
+    required
+    pattern="[1,2,3,4,5,6,7,8,9,0]{2,6}"
+    #campocontrasenaConf="ngModel">
+</div>
+<div
+class="alert alert-danger"
+role="alert"
+*ngIf="(campocontrasenaConf.errors)
+&& campoEmail2.dirty === true">
+  <p
+  *ngIf="campocontrasenaConf.errors.required">
+    CAMPO OBLIGATORIO
+  </p>
+  <p
+  *ngIf="campocontrasenaConf.errors.minlength">
+   SOLO 4 DIGITOS
+  </p>
+  <p
+  *ngIf="campocontrasenaConf.errors.maxlength">
+   SOLO 4 DIGITOS
+  </p>
+  <p
+      *ngIf="campocontrasenaConf.errors.pattern">
+        ESTA CLAVE NO ES VALIDA
+      </p>
+</div>
 
 
 

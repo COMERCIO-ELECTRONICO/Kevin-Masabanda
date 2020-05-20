@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
   email2 = '';
   surname = '';
   contrasena2 = '';
+  contrasenaConf = '';
 
   ngOnInit(): void {}
 
@@ -35,7 +36,9 @@ export class LoginComponent implements OnInit {
         'correo2: ' +
         formularios.controls.email2.value +
         'password: ' +
-        formularios.controls.contrasena2.value
+        formularios.controls.contrasena2.value +
+        'contrasenaConf: ' +
+        formularios.controls.contrasenaConf.value
     );
   }
 }
