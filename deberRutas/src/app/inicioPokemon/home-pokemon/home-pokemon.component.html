@@ -6,3 +6,23 @@
 style="padding-top: 0%; display:block;
 margin:auto;; width: 550px; height: 500px;">
 
+
+<button   
+[routerLink]="['/pokemones','listar']"
+> 
+    LISTADO POKEMONES
+</button>
+
+
+<button   
+[routerLink]="['/editar']"
+> 
+    EDITAR POKEMONES
+</button>
+
+
+<button   
+(click)="irACrearPokemones()"
+> 
+    CREAR NUEVOS POKEMONES
+</button>

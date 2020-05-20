@@ -6,12 +6,14 @@ import { HomePokemonComponent } from './inicioPokemon/home-pokemon/home-pokemon.
 import { PokemonNoEncontradoComponent } from './inicioPokemon/pokemon-no-encontrado/pokemon-no-encontrado.component';
 import {AppRoutesComponent} from './app.routes'
 import { PokemonesModule } from './pokemones/pokemones.module';
+import { EditarPokemonesComponent } from './editar-pokemones/editar-pokemones.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomePokemonComponent,
-    PokemonNoEncontradoComponent
+    PokemonNoEncontradoComponent,
+    EditarPokemonesComponent
   ],
   imports: [
     BrowserModule,
