@@ -4,25 +4,29 @@
 </h1>
 <img src="https://as.com/meristation/imagenes/2020/02/13/noticias/1581576624_508899_1581576871_noticia_normal.jpg" 
 style="padding-top: 0%; display:block;
-margin:auto;; width: 550px; height: 500px;">
+margin:auto;; width: 550px; height: 500px;"><br>
 
 
-<button   
-[routerLink]="['/pokemones','listar']"
-> 
-    LISTADO POKEMONES
-</button>
+<div style="text-align: center; margin-left: 10px">
+
+      <button 
+      [routerLink]="['/pokemones','listar']"
+type="button" class="btn btn-primary"
+      class="btn btn-dark" style="margin: 12px; 
+      color: black; background-color: chartreuse;"
+      >LISTADO POKEMONES</button>
 
 
-<button   
-[routerLink]="['/editar']"
-> 
-    EDITAR POKEMONES
-</button>
+      <button 
+      [routerLink]="['/editar']"
+      type="button" class="btn btn-dark" style="margin: 12px; 
+      color: black; background-color: chartreuse"
+      >EDITAR POKEMONES</button>
 
 
-<button   
-(click)="irACrearPokemones()"
-> 
-    CREAR NUEVOS POKEMONES
-</button>
+      <button 
+      (click)="irACrearPokemones()"
+      type="button" class="btn btn-dark" style="margin: 12px; 
+      color: black; background-color: chartreuse"
+      >CREAR POKEMONES</button>
+</div>
