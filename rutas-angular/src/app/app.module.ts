@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { UsuarioModule } from './usuario/usuario.module';
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
@@ -19,7 +20,8 @@ import {AppRoutesComponent} from './app.routes';
   imports: [
     BrowserModule,
     AppRoutesComponent,
-    UsuarioModule
+    UsuarioModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
