@@ -9,6 +9,10 @@ export class LoginComponent implements OnInit {
   constructor() {}
   email = '';
   contrasena = '';
+  name = '';
+  email2 = '';
+  surname = '';
+  contrasena2 = '';
 
   ngOnInit(): void {}
 
@@ -21,4 +25,20 @@ export class LoginComponent implements OnInit {
         formulario.controls.contrasena.value
     );
   }
+  obtenerFormularios(formularios) {
+    console.log(formularios);
+    alert(
+      'name: ' +
+        formularios.controls.name.value +
+        'surname: ' +
+        formularios.controls.surname.value +
+        'correo2: ' +
+        formularios.controls.email2.value +
+        'password: ' +
+        formularios.controls.contrasena2.value
+    );
+  }
 }
+
+
+
