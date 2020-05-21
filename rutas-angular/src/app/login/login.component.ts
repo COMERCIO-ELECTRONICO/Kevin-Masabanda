@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
         formulario.controls.contrasena.value
     );
   }
-  obtenerFormularios(formularios) {
+  compararFormularios(formularios) {
     console.log(formularios);
     alert(
       'name: ' +
@@ -41,6 +41,7 @@ export class LoginComponent implements OnInit {
         formularios.controls.contrasenaConf.value
     );
   }
+  
 }
 
 
