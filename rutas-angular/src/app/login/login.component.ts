@@ -10,38 +10,26 @@ export class LoginComponent implements OnInit {
   email = '';
   contrasena = '';
   name = '';
-  email2 = '';
   surname = '';
-  contrasena2 = '';
-  contrasenaConf = '';
+
 
   ngOnInit(): void {}
 
   obtenerFormulario(formulario) {
     console.log(formulario);
     alert(
-      'correo: ' +
+    
+      'CORREO: ' + 
         formulario.controls.email.value +
-        'password: ' +
-        formulario.controls.contrasena.value
+        'NOMBRE: ' + 
+        formulario.controls.name.value + 
+        'APELLIDO: ' + 
+        formulario.controls.surname.value + 
+        'CLAVE: ' + 
+        formulario.controls.contrasena.value 
+        
     );
   }
-  compararFormularios(formularios) {
-    console.log(formularios);
-    alert(
-      'name: ' +
-        formularios.controls.name.value +
-        'surname: ' +
-        formularios.controls.surname.value +
-        'correo2: ' +
-        formularios.controls.email2.value +
-        'password: ' +
-        formularios.controls.contrasena2.value +
-        'contrasenaConf: ' +
-        formularios.controls.contrasenaConf.value
-    );
-  }
-  
 }
 
 
