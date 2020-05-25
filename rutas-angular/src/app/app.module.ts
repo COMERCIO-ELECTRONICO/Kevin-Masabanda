@@ -8,6 +8,7 @@ import {LoginComponent} from './login/login.component';
 import {HomeComponent} from './inicio/home/home.component';
 import {NoEncontradoComponent} from './inicio/no-encontrado/no-encontrado.component';
 import {AppRoutesComponent} from './app.routes';
+import { IniciarSesionComponent } from './iniciar-sesion/iniciar-sesion.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import {AppRoutesComponent} from './app.routes';
     AppComponent,
     LoginComponent,
     HomeComponent,
-    NoEncontradoComponent
+    NoEncontradoComponent,
+    IniciarSesionComponent
   ],
   imports: [
     BrowserModule,

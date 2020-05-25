@@ -1,3 +1,4 @@
+import { IniciarSesionComponent } from './iniciar-sesion/iniciar-sesion.component';
 import { LoginComponent } from './login/login.component';
 import { RouterModule, Routes } from "@angular/router";
 import { HomeComponent } from "./inicio/home/home.component";
@@ -8,15 +9,16 @@ import {NoEncontradoComponent} from "./inicio/no-encontrado/no-encontrado.compon
 
 const rutas: Routes = [
     {
-        path: 'inicio',
+        path: 'home',
         component: HomeComponent
     },
     {
-        path: ':id/inicio',
-        component: HomeComponent
-    },
+        path: ':home/iniciar-sesion',
+        component: IniciarSesionComponent,
+      },
+      //:home/login' se redireccione en orden, primero en home y luego a login 
     {
-        path: 'login',
+        path: ':home/login',
         component: LoginComponent
     },
     {
@@ -26,7 +28,7 @@ const rutas: Routes = [
     },
     {
         path: '',
-        redirectTo: 'inicio',
+        redirectTo: 'home',
         pathMatch: 'full'
     },
     {
