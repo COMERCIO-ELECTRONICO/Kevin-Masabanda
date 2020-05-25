@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import {AutoCompleteModule} from 'primeng/autocomplete';
 import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
+import { PerfilProfesorComponent } from './perfil-profesor/perfil-profesor.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.componen
     IniciarSesionComponent,
     LoginComponent,
     PerfilUsuarioComponent,
+    PerfilProfesorComponent,
   ],
   imports: [
     BrowserModule,

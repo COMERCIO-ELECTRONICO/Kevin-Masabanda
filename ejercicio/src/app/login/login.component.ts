@@ -12,6 +12,9 @@ export class LoginComponent implements OnInit {
   pass = '';
   seleccionadoValor;
 
+  pass2 = '';
+  correo2 = '';
+
   valorAutocomplete = '';
   arregloResultado = [];
   sugerencias = ['kevin', 'cachetes', 'orlando'];
@@ -40,7 +43,7 @@ export class LoginComponent implements OnInit {
     console.log(evento);
     this.seleccionadoValor = evento;
   }
-
+ 
   ingresar() {
     console.log(this.valorAutocomplete);
 
@@ -50,11 +53,25 @@ export class LoginComponent implements OnInit {
         alert('es estudiante');
         this._router.navigate(
           ['/estudiante','perfil']
-          )
-        
+        )
       }
-    } else {
-      alert('no ingreso');
+       //PARA QUE INGRESE COMO PROFESOR
+    } else if
+      (this.pass === '4321') {
+        alert(this.correo);
+        if (this.seleccionadoValor === 'orlando') {
+          alert('es profesor');
+          this._router.navigate(
+            ['/profesor','perfil']
+          )
+        }
+      }else {
+        alert('no ingresado');
+      }
     }
   }
-}
+
+
+
+
+ 
