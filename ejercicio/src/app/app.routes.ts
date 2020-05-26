@@ -25,6 +25,12 @@ const rutas: Routes = [
     component: PerfilProfesorComponent,
   },
   {
+    path: 'usuario',
+    loadChildren: () =>
+    import('./usuario/usuario.module')
+    .then(mod => mod.UsuarioModule),
+  },
+  {
     path: 'login',
     component: LoginComponent,
   },
@@ -37,6 +43,7 @@ const rutas: Routes = [
     path: '**',
     component: NoEncontradoComponent,
   },
+ 
 ];
 
 @NgModule({

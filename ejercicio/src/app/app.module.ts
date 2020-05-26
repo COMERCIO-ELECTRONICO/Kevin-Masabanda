@@ -1,3 +1,4 @@
+import { UsuarioRoutes } from './usuario/usuario.routes';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -32,7 +33,9 @@ import { PerfilProfesorComponent } from './perfil-profesor/perfil-profesor.compo
     ButtonModule,
     FormsModule,
     MatInputModule,
-    AutoCompleteModule
+    AutoCompleteModule,
+    UsuarioRoutes
+
   ],
   providers: [],
   bootstrap: [AppComponent],
