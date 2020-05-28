@@ -22,6 +22,16 @@ module.exports = {
       type: 'boolean',
     },
 
+
+    ///RELACION UNO A MUCHOS 
+    
+    mascota:{
+      collection: 'mascota',
+      via: 'idUsuario'
+    }
+     
+    
+
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝

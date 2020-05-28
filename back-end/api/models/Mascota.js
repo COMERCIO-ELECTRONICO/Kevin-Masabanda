@@ -13,7 +13,14 @@ module.exports = {
     },
     edad: {
       type: 'number',
-    }
+    },
+
+//RELACION DE MUCHOS A UNO
+//atributo con el cual vamos a diferenciar 
+idUsuario:{
+model: 'usuario'  //este es el modelo al cual referenciamos 
+}
+
    
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
