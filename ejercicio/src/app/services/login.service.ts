@@ -10,7 +10,7 @@ constructor(
 
 
 metodoGet(url: string){
-
+return this._httpClient.get(url);
 }
 
 metodoPost(url: string){

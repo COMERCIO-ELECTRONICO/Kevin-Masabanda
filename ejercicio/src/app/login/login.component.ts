@@ -1,3 +1,4 @@
+import { LoginService } from './../services/login.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/Router';
 @Component({
@@ -18,11 +19,22 @@ export class LoginComponent implements OnInit {
   valorAutocomplete = '';
   arregloResultado = [];
   sugerencias = ['kevin', 'cachetes', 'orlando'];
+ 
+  valorSeleecionado; 
+  
   constructor(
     private readonly _router: Router,
+    private readonly _loginService: LoginService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this._loginService
+    .metodoGet('http://localhost:1337/usuario') //url de la pagina a la que quiero ir 
+    .subscribe((resuladoMetodoGet) => {
+        console.log('Respuesta de Get');
+        console.log(resuladoMetodoGet);
+      });
+  }
 
   buscarSugerencia(evento) {
     console.log(evento.query);
