@@ -1,6 +1,7 @@
-import { LoginService } from './../services/login.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/Router';
+import { LoginService } from '../services/login.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -8,32 +9,40 @@ import { Router } from '@angular/Router';
 })
 export class LoginComponent implements OnInit {
   // credenciales
+  email = '';
+  pass = '';
 
   correo = '';
-  pass = '';
-  seleccionadoValor;
 
-  pass2 = '';
-  correo2 = '';
+  seleccionadoValor;
 
   valorAutocomplete = '';
   arregloResultado = [];
   sugerencias = ['kevin', 'cachetes', 'orlando'];
- 
-  valorSeleecionado; 
-  
+
+  valorSeleecionado;
+
   constructor(
     private readonly _router: Router,
-    private readonly _loginService: LoginService
+    private readonly _loginService
+    : LoginService
   ) {}
 
   ngOnInit(): void {
+
+
     this._loginService
-    .metodoGet('http://localhost:1337/usuario') //url de la pagina a la que quiero ir 
-    .subscribe((resuladoMetodoGet) => {
-        console.log('Respuesta de Get');
-        console.log(resuladoMetodoGet);
+      .metodoGet('http://localhost:1337/usuario')
+      .subscribe((resultadoMetodoGet) => {
+        console.log('Respuest de Get');
+        console.log(resultadoMetodoGet);
       });
+
+  }
+
+  seteoValorSeleccionado(eventoSeleecionado) {
+    console.log(eventoSeleecionado);
+    this.valorSeleecionado = eventoSeleecionado;
   }
 
   buscarSugerencia(evento) {
@@ -48,42 +57,46 @@ export class LoginComponent implements OnInit {
     } else {
       this.sugerencias = ['kevin', 'cachetes', 'orlando'];
     }
-  
   }
 
-  valorSeleccionado(evento) {
-    console.log(evento);
-    this.seleccionadoValor = evento;
-  }
- 
   ingresar() {
-    console.log(this.valorAutocomplete);
-
+    this._loginService
+.metodoPost(
+  'http://localhost:1337/usuario',
+  {
+    nombre: "kevin",
+    edad: this.pass,
+    correo: this.email,
+    esCasado: true
+  }
+  )
+.subscribe(
+  (resultadoPost)=>{
+    console.log('Respuest de Post');
+    console.log(resultadoPost);
+  }
+)
     if (this.pass === '1234') {
-      alert(this.correo);
-      if (this.seleccionadoValor === 'kevin') {
+      alert(this.email);
+      if (this.valorSeleecionado === 'kevin') {
         alert('es estudiante');
-        this._router.navigate(
-          ['/estudiante','perfil']
-        )
+
+        this._router.navigate(['/estudiante', 'perfil']);
+        // localhost:9000/estudiante/perfil
       }
-       //PARA QUE INGRESE COMO PROFESOR
-    } else if
-      (this.pass === '4321') {
-        alert(this.correo);
-        if (this.seleccionadoValor === 'orlando') {
-          alert('es profesor');
-          this._router.navigate(
-            ['/profesor','perfil']
-          )
-        }
-      }else {
-        alert('no ingresado');
-      }
+    } else {
+      alert('no ingreso');
     }
   }
 
+  eliminarRegitroPorId(){
+    this._loginService
+    .metodoDelete('http://localhost:1337/usuario/2').subscribe(
+      (respuestDelete)=>{
+        console.log(' repuesta de delete');
+        console.log(respuestDelete);
+      }
+    )
+  }
 
-
-
- 
+}
