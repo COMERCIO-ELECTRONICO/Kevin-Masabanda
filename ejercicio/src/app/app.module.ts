@@ -15,7 +15,7 @@ import { MatInputModule } from '@angular/material/input';
 import {AutoCompleteModule} from 'primeng/autocomplete';
 import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
 import { PerfilProfesorComponent } from './perfil-profesor/perfil-profesor.component';
-
+import {HttpClientModule} from "@angular/common/http";
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +34,8 @@ import { PerfilProfesorComponent } from './perfil-profesor/perfil-profesor.compo
     FormsModule,
     MatInputModule,
     AutoCompleteModule,
-    UsuarioRoutes
+    UsuarioRoutes,
+    HttpClientModule
 
   ],
   providers: [],
