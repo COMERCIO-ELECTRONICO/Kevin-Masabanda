@@ -1,5 +1,5 @@
 import { InfoUserComponent } from './info-user/info-user.component';
-import { Routes, RouterModule } from '@angular/Router';
+import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 const rutas: Routes = [
     {

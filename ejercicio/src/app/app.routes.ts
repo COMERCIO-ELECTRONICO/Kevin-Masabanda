@@ -1,11 +1,11 @@
-import { PerfilProfesorComponent } from './perfil-profesor/perfil-profesor.component';
-import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/Router';
 import { HomeComponent } from './home/home.component';
 import { NoEncontradoComponent } from './no-encontrado/no-encontrado.component';
 import { IniciarSesionComponent } from './iniciar-sesion/iniciar-sesion.component';
 import { LoginComponent } from './login/login.component';
+import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
+import { Routes, RouterModule } from '@angular/router';
+import { LoginGuard } from './guards/login.guard';
 
 const rutas: Routes = [
   {
@@ -21,18 +21,15 @@ const rutas: Routes = [
     component: PerfilUsuarioComponent,
   },
   {
-    path: 'profesor/perfil',
-    component: PerfilProfesorComponent,
-  },
-  {
     path: 'usuario',
     loadChildren: () =>
-    import('./usuario/usuario.module')
-    .then(mod => mod.UsuarioModule),
+      import('./usuario/usuario.module')
+      .then(mod => mod.UsuarioModule),
   },
   {
     path: 'login',
     component: LoginComponent,
+    canActivate: [LoginGuard]
   },
   {
     path: '',
@@ -43,7 +40,6 @@ const rutas: Routes = [
     path: '**',
     component: NoEncontradoComponent,
   },
- 
 ];
 
 @NgModule({

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/Router';
 import { LoginService } from '../services/login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -24,19 +24,18 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private readonly _router: Router,
-    private readonly _loginService
-    : LoginService
+    private readonly _loginService: LoginService,    
   ) {}
 
   ngOnInit(): void {
+    
 
-
-    this._loginService
+   /* this._loginService
       .metodoGet('http://localhost:1337/usuario')
       .subscribe((resultadoMetodoGet) => {
         console.log('Respuest de Get');
         console.log(resultadoMetodoGet);
-      });
+      });*/
 
   }
 
@@ -60,6 +59,14 @@ export class LoginComponent implements OnInit {
   }
 
   ingresar() {
+    console.log('guardar')
+    
+    localStorage
+    .setItem(
+      'nombre',
+      JSON.stringify({nombre: 'kevin'})
+    )
+/*
     this._loginService
 .metodoPost(
   'http://localhost:1337/usuario',
@@ -80,13 +87,12 @@ export class LoginComponent implements OnInit {
       alert(this.email);
       if (this.valorSeleecionado === 'kevin') {
         alert('es estudiante');
-
         this._router.navigate(['/estudiante', 'perfil']);
         // localhost:9000/estudiante/perfil
       }
     } else {
       alert('no ingreso');
-    }
+    }*/
   }
 
   eliminarRegitroPorId(){
